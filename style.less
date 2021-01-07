@@ -1,0 +1,37 @@
+body {
+    padding: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 200px 0;
+    font-family: arial;
+}
+.form-group {
+    display: flex;
+    margin: 0 -5px;
+    &__label {
+        margin: 0 5px;
+        position: relative;
+    }
+    &__input {
+        height: 28px;
+        border: 0;
+        border-bottom: 1px solid #000;
+        outline: none;
+        &.is_changed {
+            + .form-group__placeholder {
+                transform: translateY(-150%) scale(0.7);
+                opacity: 1;
+            }
+        }
+    }
+    &__placeholder {
+        position: absolute;
+        left: 0;
+        top: 6px;
+        transform-origin: bottom left;
+        opacity: 0.35;
+        pointer-events: none;
+        transition: all 0.3s ease;
+    }
+}
